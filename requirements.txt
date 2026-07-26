@@ -1,0 +1,14 @@
+torch
+torchvision
+torchaudio
+pennylane
+numpy
+pandas
+scikit-learn
+joblib
+opencv-python-headless
+Pillow
+matplotlib
+flask
+gunicorn
+tqdm
