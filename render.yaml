@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: hybrid-qcnn-brain-tumor
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
