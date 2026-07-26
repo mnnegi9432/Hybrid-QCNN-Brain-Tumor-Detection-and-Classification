@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hybrid QCNN Brain Tumor Detection</title>
+    <style>
+        body{
+            font-family:Arial;
+            background:#f4f4f4;
+            text-align:center;
+            padding:40px;
+        }
+
+        .container{
+            width:700px;
+            margin:auto;
+            background:white;
+            padding:30px;
+            border-radius:12px;
+            box-shadow:0 0 10px rgba(0,0,0,.2);
+        }
+
+        h1{
+            color:#1d3557;
+        }
+
+        input[type=file]{
+            margin:20px;
+        }
+
+        button{
+            background:#1d3557;
+            color:white;
+            padding:12px 25px;
+            border:none;
+            border-radius:6px;
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        button:hover{
+            background:#457b9d;
+        }
+
+        img{
+            margin-top:20px;
+            width:300px;
+            border-radius:10px;
+        }
+
+        h2{
+            color:green;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Hybrid QCNN Brain Tumor Detection</h1>
+
+<form action="/predict" method="POST" enctype="multipart/form-data">
+
+<input type="file" name="image" required>
+
+<br>
+
+<button type="submit">Predict</button>
+
+</form>
+
+{% if image %}
+
+<img src="{{ url_for('static', filename='uploads/' + image) }}">
+
+{% endif %}
+
+{% if prediction %}
+
+<h2>Prediction : {{ prediction }}</h2>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>
